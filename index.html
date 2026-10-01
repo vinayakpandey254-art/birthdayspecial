@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Sanu Baby 💖</title>
+<style>
+:root{--bg:#fff3f6;--card:#fff;--ink:#4a1d2e;--soft:#9b5c72;--a:#e0457b;--b:#ff9a8b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a0c14;--card:#2a1520;--ink:#ffe6ee;--soft:#d79ab0;--a:#ff6b9d;--b:#ffb199}}
+:root[data-theme="dark"]{--bg:#1a0c14;--card:#2a1520;--ink:#ffe6ee;--soft:#d79ab0;--a:#ff6b9d;--b:#ffb199}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;text-align:center;overflow-x:hidden}
+canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+section{position:relative;z-index:1;padding:44px 18px;max-width:640px;margin:auto}
+.rv{opacity:0;transform:translateY(30px);transition:all .9s ease}.rv.on{opacity:1;transform:none}
+h1{font-size:clamp(36px,11vw,60px);margin:10px 0;line-height:1.1;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{color:var(--a);font-weight:normal;font-size:28px;margin:0 0 6px}
+.sub,.hint{color:var(--soft);font-style:italic}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid var(--card);box-shadow:0 0 0 4px var(--a),0 12px 40px rgba(224,69,123,.4);animation:pulse 3s infinite}
+@keyframes pulse{50%{transform:scale(1.05)}}
+button{font:inherit;background:linear-gradient(90deg,var(--a),var(--b));color:#fff;border:0;border-radius:99px;padding:14px 28px;margin-top:20px;cursor:pointer;box-shadow:0 8px 24px rgba(224,69,123,.35)}
+#mus{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top,0px));z-index:5;margin:0;padding:10px 14px;display:none}
+.gal{columns:2;gap:10px;margin-top:16px}
+.gal img{width:100%;border-radius:14px;margin-bottom:10px;display:block;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .4s}
+.gal img:nth-child(odd){transform:rotate(-1.5deg)}.gal img:nth-child(even){transform:rotate(1.5deg)}
+.gal img:active{transform:scale(1.04)}
+.card{background:var(--card);border-radius:18px;padding:22px 18px;margin:14px 0;box-shadow:0 6px 20px rgba(224,69,123,.14);line-height:1.9;font-size:18px}
+.card span{display:block}
+.letter{text-align:left;font-size:17px;line-height:1.9;white-space:pre-wrap;min-height:300px}
+.goal{display:flex;gap:14px;align-items:center;text-align:left;background:var(--card);border-radius:16px;padding:14px 16px;margin:10px 0;box-shadow:0 4px 14px rgba(224,69,123,.12)}
+.goal b{font-size:28px}
+.fin{padding-bottom:70px}
+</style></head><body>
+<canvas id="bg"></canvas>
+<button id="mus" onclick="toggle()">🔊</button>
+
+<section class="hero">
+  <img class="avatar" id="av" alt="Sanu">
+  <p class="sub" style="margin-top:22px;letter-spacing:.25em;text-transform:uppercase;font-size:12px">Today is all about you</p>
+  <h1>Happy Birthday,<br>Sanu Baby 🎂</h1>
+  <p class="sub">I made something little (okay, big) just for you…</p>
+  <button onclick="start()">Tap to begin 🎶💖</button>
+</section>
+
+<section><h2 class="rv">Meri Jaan ki Jhalkiyan 📸</h2><p class="hint rv">Every picture of you is my favourite one</p><div class="gal" id="gal"></div></section>
+
+<section><h2 class="rv">Shayari for My Sanu 🌹</h2>
+<div class="card rv"><span>Teri muskaan mein woh jaadu hai,</span><span>ke chand bhi sharmata hoga.</span><span>Tu jab hoti hai saath mere,</span><span>waqt bhi thehar sa jaata hoga. ✨</span></div>
+<div class="card rv"><span>Har subah dua hai rab se meri,</span><span>tujhe khushiyon ka har tohfa mile.</span><span>Jo tu chahe woh sab mile tujhe,</span><span>aur umar bhar mera saath mile. 🌹</span></div>
+<div class="card rv"><span>Lafzon mein tujhe kaise likhun,</span><span>tu meri har dua ka asar hai.</span><span>Teri hansi se roshan hai duniya meri,</span><span>tu hi meri subah, tu hi meri sehar hai. 💫</span></div>
+<div class="card rv"><span>Har saal ka yeh din khaas lagta hai,</span><span>kyunki tera hona mere paas lagta hai. ❤️</span></div></section>
+
+<section><h2 class="rv">A Love Letter 💌</h2><div class="card letter rv" id="ltr"></div></section>
+
+<section><h2 class="rv">Our Future Goals 🏡</h2><p class="hint rv">Promises I want to keep, with you</p>
+<div class="goal rv"><b>🏠</b><span>A cosy little home where every evening ends with chai and your laughter.</span></div>
+<div class="goal rv"><b>✈️</b><span>Travel the world together, hand in hand, one trip at a time.</span></div>
+<div class="goal rv"><b>🎂</b><span>Celebrate every birthday of yours, with a bigger surprise each year.</span></div>
+<div class="goal rv"><b>🤝</b><span>Hold on tighter after every fight, never let go.</span></div>
+<div class="goal rv"><b>💍</b><span>One beautiful day, make you mine forever.</span></div>
+<div class="goal rv"><b>♾️</b><span>Grow old together, still smiling like today.</span></div></section>
+
+<section class="fin"><h2 class="rv">Janamdin Mubarak, Meri Jaan 💕</h2><p class="sub rv">Always and forever yours</p><button onclick="burst()">One more surprise 🎉</button></section>
+
+<script>
+var I=["photos/1.jpg", "photos/2.jpg", "photos/3.jpg", "photos/4.jpg", "photos/5.jpg", "photos/6.jpg", "photos/7.jpg", "photos/8.jpg", "photos/9.jpg", "photos/10.jpg", "photos/11.jpg"];
+document.getElementById('av').src=I[0];
+var gal=document.getElementById('gal');
+I.slice(1).forEach(function(s){var m=new Image();m.src=s;m.className='rv';gal.appendChild(m)});
+var L="My dearest Sanu,\n\nHappy Birthday, meri jaan! 💖\n\n1st November 2025, Vrindavan. That was the day we first met, and we went to Banke Bihari ji's temple together. I didn't know then that a simple visit would become the most beautiful beginning of my life.\n\nAfter some time of talking, I fell in love with you completely. From random conversations to becoming the most important person in my life, every step with you has felt like a blessing. Your smile, your voice, your little ways, everything about you became my favourite thing in the world.\n\nThank you for every call, every laugh, every silly moment. You make ordinary days feel special just by being in them.\n\nI promise to care for you, to listen, and to stand by you on your good days and your hard ones. You are not just my girlfriend, you are my home.\n\nWriting this story with you is my favourite thing. Happy Birthday to my favourite chapter. 📖\n\nI love you more than words, more than shayari, more than anything.\n\nForever yours,\nVinayak Pandey 🌹";
+var typed=false;
+function type(){if(typed)return;typed=true;var el=document.getElementById('ltr'),i=0;(function t(){el.textContent=L.slice(0,i++);if(i<=L.length)setTimeout(t,28)})()}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');if(e.target.id=='ltr')type()}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+
+/* background hearts & petals */
+var cv=document.getElementById('bg'),cx=cv.getContext('2d'),P=[],W,H;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+var E=['💖','🌸','💕','✨','🌹','🎈'];
+for(var i=0;i<22;i++)P.push({x:Math.random()*W,y:Math.random()*H,s:14+Math.random()*18,v:.3+Math.random()*.7,d:Math.random()*6,e:E[i%E.length]});
+(function loop(){cx.clearRect(0,0,W,H);P.forEach(function(p){p.y-=p.v;p.d+=.02;if(p.y<-30){p.y=H+30;p.x=Math.random()*W}cx.font=p.s+'px serif';cx.globalAlpha=.55;cx.fillText(p.e,p.x+Math.sin(p.d)*20,p.y)});requestAnimationFrame(loop)})();
+
+/* confetti */
+function burst(){var e=['🎉','💖','🎊','🌹','✨','🎂','💕'];for(var i=0;i<60;i++)setTimeout(function(){var h=document.createElement('div');h.textContent=e[Math.floor(Math.random()*e.length)];h.style.cssText='position:fixed;top:-30px;z-index:9;pointer-events:none;font-size:'+(18+Math.random()*16)+'px;left:'+Math.random()*100+'vw;transition:transform '+(3+Math.random()*3)+'s linear,opacity 3s';document.body.appendChild(h);requestAnimationFrame(function(){h.style.transform='translateY(110vh) rotate('+(Math.random()*540)+'deg)';h.style.opacity='.5'});setTimeout(function(){h.remove()},6500)},i*70)}
+
+/* music: Happy Birthday + soft chords, synthesised */
+var ac,mg,on=false,timer;
+var N={C:261.63,D:293.66,E:329.63,F:349.23,G:392,A:440,B:493.88,c:523.25,d:587.33,e:659.25,f:698.46,g:783.99};
+var M=[['G',.75],['G',.25],['A',1],['G',1],['c',1],['B',2],['G',.75],['G',.25],['A',1],['G',1],['d',1],['c',2],['G',.75],['G',.25],['g',1],['e',1],['c',1],['B',1],['A',1],['f',.75],['f',.25],['e',1],['c',1],['d',1],['c',2]];
+var CH=[['C',4],['C',2],['G',2],['C',4],['G',2],['C',2],['C',4],['F',2],['C',2],['G',2],['C',2]];
+function tone(f,t,d,type,vol){var o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(mg);o.start(t);o.stop(t+d+.05)}
+function play(){if(!on)return;var t=ac.currentTime+.1,b=.5,tot=0;
+M.forEach(function(n){tone(N[n[0]],t+tot*b,n[1]*b*.95,'triangle',.22);tot+=n[1]});
+var ct=0;[[130.8,261.6,329.6],[130.8,261.6,329.6],[98,196,246.9],[130.8,261.6,329.6],[87.3,174.6,220],[98,196,246.9],[130.8,261.6,329.6]].forEach(function(c,i){var d=[3,3,3,3,3,3,4][i]*b*2;c.forEach(function(f){tone(f,t+ct,d,'sine',.07)});ct+=d});
+timer=setTimeout(play,Math.max(tot*b,ct)*1000+1500)}
+function startMusic(){if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();mg=ac.createGain();mg.gain.value=.8;mg.connect(ac.destination)}ac.resume();on=true;play();document.getElementById('mus').textContent='🔊'}
+function toggle(){if(on){on=false;clearTimeout(timer);ac.suspend();mus.textContent='🔇'}else startMusic()}
+function start(){startMusic();mus.style.display='block';burst();document.querySelectorAll('section')[1].scrollIntoView()}
+var mus=document.getElementById('mus');
+</script></body></html>
